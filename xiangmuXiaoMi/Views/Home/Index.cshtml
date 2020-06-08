@@ -27,27 +27,44 @@
             display: none;
             float: left
         }
-        #logintxt{
-            color:white;
-            font-weight:bold;
+
+        #logintxt {
+            color: white;
+            font-weight: bold;
+        }
+
+        #esclogin {
+            display: none;
+            cursor: pointer;
         }
     </style>
     <script>
+
         $(
             function () {
                 var id = sessionStorage.getItem('id')
                 if (id) {
                     console.log(123);
                     $.get(
-                    "/home/getStudentByid",
-                    {"id":id},
-                    function (data) {
-                        $('#logintxt').html(data.Name);
+                        "/home/getStudentByid",
+                        { "id": id },
+                        function (data) {
+                            $('#logintxt').html(data.Name);
+                            $('#esclogin').show();
                         }
-                    ,"json"
-                );
+                        , "json"
+                    );
                 }
-                
+
+                //退出
+                $('#esclogin').click(
+                    function myfunction() {
+                        $('#esclogin').hide();
+                        sessionStorage.clear();
+                        window.location.reload();
+                    }
+                );
+
             }
         );
     </script>
@@ -68,7 +85,7 @@
             <li>
                 <a href="#">
                     <div class="bar-link">
-                        
+
                         <img src="~/Content/images/小图标/个人中心.png" alt="" class="bar-image">
                         <a href="#" class="bar-text">个人中心</a>
                     </div>
@@ -143,7 +160,7 @@
                         <a href="/Home/user_register">注册</a>
                         <span class="spn">|</span>
                     </span>
-                    
+                    <span id="esclogin">退出登录</span>
                     <a href="#">消息通知</a>
 
 
