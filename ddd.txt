@@ -2,3 +2,7 @@
 2 .git commit -m ‘注释’ 将缓存区内容添加到本地仓库
 3 .git push origin master首先将本地仓库master中的信息同步到远程仓库master中
 4.拉取直接用  git  pull
+
+
+
+擦剂拿卡吧加不对劲按等级但是买电脑你家啊
