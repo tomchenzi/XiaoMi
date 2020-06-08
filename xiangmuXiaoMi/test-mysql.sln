@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test-mysql", "test-mysql.csproj", "{2970BF12-4404-4D74-8C92-5BD2CD2A9935}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cas", "cas", "{44EDF41B-3F39-4104-9B2A-0DE37DF91E12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2970BF12-4404-4D74-8C92-5BD2CD2A9935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2970BF12-4404-4D74-8C92-5BD2CD2A9935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2970BF12-4404-4D74-8C92-5BD2CD2A9935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2970BF12-4404-4D74-8C92-5BD2CD2A9935}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2276C22-AADC-41D1-8345-A21BB9DF613C}
+	EndGlobalSection
+EndGlobal
