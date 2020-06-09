@@ -73,9 +73,23 @@
                         window.location.reload();
                     }
                 );
-
-            }
+            } 
         );
+        //ajax  
+        var dv = $("#search").val();
+        $(function () {
+            $(".search-submit").click(function () {
+                $.post(
+                    '/home/Index',
+                    {
+                        search: dv
+                    }, function (data) {
+                        alert("ddd")
+                    },"json"
+                )
+            })
+        })
+
     </script>
 </head>
 <body>
@@ -201,9 +215,9 @@
         </div>
         <div class="search">
 
-            <form action="#" method="get">
+            <form action="/Home/Index" method="post">
                 <label for="search"> </label>
-                <input type="search" class="search-box" id="search" name="search" value="">
+                <input type="text" class="search-box" id="search" name="search" value="">
                 <a href="#" class="search-link">小米8</a>
                 <a href="#" class="search-link">小米MIX2s</a>
                 <input type="submit" class="search-submit" value="搜索">

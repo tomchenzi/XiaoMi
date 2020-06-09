@@ -13,10 +13,30 @@ namespace test_mysql.Controllers
 
     public class HomeController : Controller
     {
+        [HttpPost]
+        public int Index(string search)
+        {
+            string sql = $"select * from student where name like '{search}'";
+            var dt = test_mysql.Models.MysqlHelper.ExecuteScalar(sql);
+            //if (dt.Columns.Count >= 5)
+            //{
+            //    return Content("<script>alert('dasdsda')</script>");
+            //}
+            //else
+            //{
+            //    return Content("<script>alert('11111')</script>");
+            //}
+            if (dt == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+        }
         public ActionResult Index()
         {
-           
-             
             //var x = test_mysql.Models.MysqlHelper.ExecuteNonQuery("INSERT INTO `test`.`student`( `name`) VALUES ( 'shab五');");
             return View();
         }
