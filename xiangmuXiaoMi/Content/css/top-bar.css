@@ -67,6 +67,7 @@
     bottom: 80px;
     background-color: #fff;
     text-align: center;
+    z-index:9999;
 }
 .bar-link{
     width: 82px;

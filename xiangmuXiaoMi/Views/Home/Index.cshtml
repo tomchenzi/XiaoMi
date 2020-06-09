@@ -37,6 +37,15 @@
             display: none;
             cursor: pointer;
         }
+        .mi_phone{
+            left:234px;
+            height:460px;
+            width:990px;
+            background:red;
+            opacity:0.42;
+            position:absolute;
+            top:0;
+        }
     </style>
     <script>
 
@@ -204,21 +213,21 @@
     </div>
     <div class="centre">
         <a href="#">
-            <img src="./images/xmad_1542593050318_TVIrS.jpg" class="commodity-img" alt="">
+            <img src="~/Content/images/xmad_1542593050318_TVIrS.jpg" class="commodity-img" alt="">
         </a>
-
+        <ul class="mi_phone"><li></li></ul>
         <div class="choose">
             <ul>
-                <li><a href="#">手机 电话卡 <span class="choose-spn">></span></a></li>
-                <li><a href="#">电视 盒子<span class="choose-spn">></span></a></li>
-                <li><a href="#">笔记本 平板<span class="choose-spn">></span></a></li>
-                <li><a href="#">家电 插线板<span class="choose-spn">></span></a></li>
-                <li><a href="#">出行 穿戴<span class="choose-spn">></span></a></li>
-                <li><a href="#">智能 路由器<span class="choose-spn">></span></a></li>
-                <li><a href="#">电源 配件<span class="choose-spn">></span></a></li>
-                <li><a href="#">健康 儿童<span class="choose-spn">></span></a></li>
-                <li><a href="#">耳机 音响<span class="choose-spn">></span></a></li>
-                <li><a href="#">生活 箱包<span class="choose-spn">></span></a></li>
+                <li class="choose1"><a href="#">手机 电话卡 <span class="choose-spn">></span></a></li>
+                <li class="choose2"><a href="#">电视 盒子<span class="choose-spn">></span></a></li>
+                <li class="choose3"><a href="#">笔记本 平板<span class="choose-spn">></span></a></li>
+                <li class="choose4"><a href="#">家电 插线板<span class="choose-spn">></span></a></li>
+                <li class="choose5"><a href="#">出行 穿戴<span class="choose-spn">></span></a></li>
+                <li class="choose6"><a href="#">智能 路由器<span class="choose-spn">></span></a></li>
+                <li class="choose7"><a href="#">电源 配件<span class="choose-spn">></span></a></li>
+                <li class="choose8"><a href="#">健康 儿童<span class="choose-spn">></span></a></li>
+                <li class="choose9"><a href="#">耳机 音响<span class="choose-spn">></span></a></li>
+                <li class="choose10"><a href="#">生活 箱包<span class="choose-spn">></span></a></li>
             </ul>
         </div>
     </div>
@@ -678,5 +687,22 @@
 </body>
 </html>
 <script>
+    $(function () {
+        $('.choose1').mouseover(function () {
+            $('.mi_phone').show();
+        })
+        
+        $('.choose1').mouseout(function () {
+            $('.mi_phone').hide();
+        })
 
+        $('.mi_phone').mouseover(function () {
+            $('.mi_phone').show();
+        })
+        $('.mi_phone').mouseout(function () {
+            $('.mi_phone').hide();
+        })
+        
+        255, 97, 22
+    })
 </script>
