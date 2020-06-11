@@ -191,6 +191,7 @@
     <Content Include="Content\css\nav.css" />
     <Content Include="Content\css\reset.css" />
     <Content Include="Content\css\seckill.css" />
+    <Content Include="Content\css\shopping.css" />
     <Content Include="Content\css\top-bar.css" />
     <Content Include="Content\images\ba10428a4f9495ac310fd0b5e0cf8370.png" />
     <Content Include="Content\images\flashpurchase.png" />
@@ -268,6 +269,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\user_login.cshtml" />
     <Content Include="Views\Home\user_register.cshtml" />
+    <Content Include="Views\Home\Shopping.cshtml" />
+    <Content Include="Views\Home\xiaomi1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

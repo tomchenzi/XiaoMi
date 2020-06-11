@@ -40,16 +40,26 @@ namespace test_mysql.Controllers
         public ActionResult Index()
         {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b45470619c1f5dc80e846ff5c9325363422f292d
             //var x = test_mysql.Models.MysqlHelper.ExecuteNonQuery("INSERT INTO `test`.`student`( `name`) VALUES ( 'shab五');");
             return View();
         }
         [HttpPost]
         //要改成string 
+<<<<<<< HEAD
         public int user_login(string UserName,string pwd) {
             
             string sql = $"SELECT `⁯UserID` FROM `UserInfo` where UserName='{UserName}' and pwd='{pwd}'";
+=======
+        public int user_login(string username, string pwd) {
+
+            string sql = $"SELECT `⁯id` FROM `student` where name='{username}' and pwd='{pwd}'";
+>>>>>>> b45470619c1f5dc80e846ff5c9325363422f292d
             var dt = test_mysql.Models.MysqlHelper.ExecuteScalar(sql);
-            if (dt==null)
+            if (dt == null)
             {
                 return 0;
             }
@@ -59,7 +69,7 @@ namespace test_mysql.Controllers
             }
             //if (dt.Rows.Count>0)
             //{
-              
+
             //    student s1 = new student() { Name = username, Pwd = pwd};
 
             //    return View("~/Views/Home/index.cshtml");
@@ -68,7 +78,7 @@ namespace test_mysql.Controllers
             //}
             //else
             //{
-    
+
             //    return Content("<script>alert('账号密码错误！'), history.back();</script>");
             //}
             //var x = test_mysql.Models.MysqlHelper.ExecuteNonQuery("INSERT INTO `test`.`student`( `name`) VALUES ( 'username');");
@@ -82,7 +92,11 @@ namespace test_mysql.Controllers
         [HttpGet]
         public string getStudentByid(int id)
         {
+<<<<<<< HEAD
             UserInfo s1 = EFService.GetUserInfo($"SELECT * FROM `UserInfo` where UserID={id}");
+=======
+            student s1 = EFService.GetStudent($"SELECT * FROM `student` where `⁯id`={id}");
+>>>>>>> b45470619c1f5dc80e846ff5c9325363422f292d
             return Newtonsoft.Json.JsonConvert.SerializeObject(s1);
         }
        
@@ -91,6 +105,7 @@ namespace test_mysql.Controllers
 
             return View();
         }
+<<<<<<< HEAD
         [HttpPost]
         public ActionResult user_register(string uname,string email,int age,string upwd) {
             
@@ -99,5 +114,12 @@ namespace test_mysql.Controllers
             return Content("<script>alert('注册成功')</script>");
         }
       
+=======
+        public ActionResult xiaomi1()
+        {
+            return View();
+        }
+        public ActionResult Shopping(){ return PartialView(); }
+>>>>>>> b45470619c1f5dc80e846ff5c9325363422f292d
     }
 }
