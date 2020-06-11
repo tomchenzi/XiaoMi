@@ -15,18 +15,18 @@ namespace test_mysql.Controllers
     {
         public ActionResult Index()
         {
-           
-             
+
+
             //var x = test_mysql.Models.MysqlHelper.ExecuteNonQuery("INSERT INTO `test`.`student`( `name`) VALUES ( 'shab五');");
             return View();
         }
         [HttpPost]
         //要改成string 
-        public int user_login(string username,string pwd) {
-            
+        public int user_login(string username, string pwd) {
+
             string sql = $"SELECT `⁯id` FROM `student` where name='{username}' and pwd='{pwd}'";
             var dt = test_mysql.Models.MysqlHelper.ExecuteScalar(sql);
-            if (dt==null)
+            if (dt == null)
             {
                 return 0;
             }
@@ -36,7 +36,7 @@ namespace test_mysql.Controllers
             }
             //if (dt.Rows.Count>0)
             //{
-              
+
             //    student s1 = new student() { Name = username, Pwd = pwd};
 
             //    return View("~/Views/Home/index.cshtml");
@@ -45,7 +45,7 @@ namespace test_mysql.Controllers
             //}
             //else
             //{
-    
+
             //    return Content("<script>alert('账号密码错误！'), history.back();</script>");
             //}
             //var x = test_mysql.Models.MysqlHelper.ExecuteNonQuery("INSERT INTO `test`.`student`( `name`) VALUES ( 'username');");
@@ -59,7 +59,7 @@ namespace test_mysql.Controllers
         [HttpGet]
         public string getStudentByid(int id)
         {
-          student s1 = EFService.GetStudent($"SELECT * FROM `student` where `⁯id`={id}");
+            student s1 = EFService.GetStudent($"SELECT * FROM `student` where `⁯id`={id}");
             return Newtonsoft.Json.JsonConvert.SerializeObject(s1);
         }
 
@@ -67,5 +67,10 @@ namespace test_mysql.Controllers
 
             return View();
         }
+        public ActionResult xiaomi1()
+        {
+            return View();
+        }
+        public ActionResult Shopping(){ return PartialView(); }
     }
 }
