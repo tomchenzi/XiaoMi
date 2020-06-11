@@ -49,7 +49,7 @@ namespace test_mysql.Models
                     cmd.CommandText = sql;
                     try
                     {
-                        object i = cmd.CommandText;
+                        object i = cmd.ExecuteScalar();
                         return i;
                     }
                     catch (Exception)

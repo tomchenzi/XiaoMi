@@ -63,7 +63,7 @@
                         , "json"
                     );
                 }
-
+               
                 //退出
                 $('#esclogin').click(
                     function myfunction() {
@@ -74,20 +74,19 @@
                 );
             } 
         );
-        //ajax  
-        var dv = $("#search").val();
-        $(function () {
-            $(".search-submit").click(function () {
-                $.post(
-                    '/Home/Index',
-                    {
-                     search : dv
-                    }, function (search) {
-                        
-                    },"json"
-                )
-            })
-        })
+        //$(function () {
+        //    $(".search-submit").click(function () {
+        //        $.post(
+        //            "Home/index",
+        //            { search: $("#search").val() },
+        //            function () {
+
+        //            },"json"
+
+        //        )
+        //    })
+        //})
+     
        
         
 

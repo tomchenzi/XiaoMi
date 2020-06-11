@@ -18,7 +18,7 @@ namespace test_mysql.Controllers
      [HttpPost]
         public string Index(string search)
         {
-            string sql = $"select * from UserInfo where UserName like '{search}'";
+            string sql = $"select * from UserInfo where UserName like '{search}%'";
             var dt = test_mysql.Models.MysqlHelper.ExecuteScalar(sql);
             //if (dt.Columns.Count >= 5)
             //{
@@ -85,10 +85,19 @@ namespace test_mysql.Controllers
             UserInfo s1 = EFService.GetUserInfo($"SELECT * FROM `UserInfo` where UserID={id}");
             return Newtonsoft.Json.JsonConvert.SerializeObject(s1);
         }
-
-        public ActionResult user_register() {
+       
+        public ActionResult user_register()
+        {
 
             return View();
         }
+        [HttpPost]
+        public ActionResult user_register(string uname,string email,int age,string upwd) {
+            
+            string sql = $"INSERT INTO `XiaoMiDB`.`UserInfo`(`UserName`, `pwd`, `age`, `Email`) VALUES ('{uname}', '{upwd}', {age}, '{email}');";
+            var dt = test_mysql.Models.MysqlHelper.ExecuteNonQuery(sql);
+            return Content("<script>alert('注册成功')</script>");
+        }
+      
     }
 }
