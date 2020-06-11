@@ -53,12 +53,11 @@
             function () {
                 var id = sessionStorage.getItem('id')
                 if (id) {
-                    console.log(123);
                     $.get(
                         "/home/getStudentByid",
                         { "id": id },
                         function (data) {
-                            $('#logintxt').html(data.Name);
+                            $('#logintxt').html(data.UserName);
                             $('#esclogin').show();
                         }
                         , "json"
@@ -80,15 +79,17 @@
         $(function () {
             $(".search-submit").click(function () {
                 $.post(
-                    '/home/Index',
+                    '/Home/Index',
                     {
-                        search: dv
-                    }, function (data) {
-                        alert("ddd")
+                     search : dv
+                    }, function (search) {
+                        
                     },"json"
                 )
             })
         })
+       
+        
 
     </script>
 </head>

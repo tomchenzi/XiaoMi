@@ -9,17 +9,18 @@ namespace test_mysql.EF
 {
     public class EFService
     {
-        public static student GetStudent(string sql)
+        public static UserInfo GetUserInfo(string sql)
         {
             DataTable dt = MysqlHelper.ExecuteTable(sql);
-            student s1 = new student();
+            UserInfo s1 = new UserInfo();
             foreach (DataRow row in dt.Rows)
             {
 
-                s1.Name = row["name"].ToString();
-                s1.Pwd = row["pwd"].ToString();
-                s1.Id = int.Parse(row["id"].ToString());
-
+                s1.UserName = row["UserName"].ToString();
+                s1.pwd = row["pwd"].ToString();
+                s1.UserID = int.Parse(row["UserID"].ToString());
+                s1.Email= row["Email"].ToString();
+                s1.age = int.Parse(row["age"].ToString());
             }
             return s1;
 

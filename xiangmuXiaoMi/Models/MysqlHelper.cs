@@ -10,7 +10,7 @@ namespace test_mysql.Models
 {
     public static class MysqlHelper
     {
-        private static string connStr = "Server=localhost;Database=test;Uid=root;Pwd=sa;";
+        private static string connStr = "Server=47.107.64.53;Database=XiaoMiDB;Uid=root;Pwd=root;";
         /// <summary>
         /// 返回配置文件中指定的连接
         /// </summary>
@@ -49,7 +49,7 @@ namespace test_mysql.Models
                     cmd.CommandText = sql;
                     try
                     {
-                        object i = cmd.ExecuteScalar();
+                        object i = cmd.CommandText;
                         return i;
                     }
                     catch (Exception)

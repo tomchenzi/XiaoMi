@@ -13,10 +13,12 @@ namespace test_mysql.Controllers
 
     public class HomeController : Controller
     {
-        [HttpPost]
-        public int Index(string search)
+        
+      
+     [HttpPost]
+        public string Index(string search)
         {
-            string sql = $"select * from student where name like '{search}'";
+            string sql = $"select * from UserInfo where UserName like '{search}'";
             var dt = test_mysql.Models.MysqlHelper.ExecuteScalar(sql);
             //if (dt.Columns.Count >= 5)
             //{
@@ -28,23 +30,24 @@ namespace test_mysql.Controllers
             //}
             if (dt == null)
             {
-                return 0;
+                return "失败";
             }
             else
             {
-                return 1;
+                return "成功";
             }
         }
         public ActionResult Index()
         {
+
             //var x = test_mysql.Models.MysqlHelper.ExecuteNonQuery("INSERT INTO `test`.`student`( `name`) VALUES ( 'shab五');");
             return View();
         }
         [HttpPost]
         //要改成string 
-        public int user_login(string username,string pwd) {
+        public int user_login(string UserName,string pwd) {
             
-            string sql = $"SELECT `⁯id` FROM `student` where name='{username}' and pwd='{pwd}'";
+            string sql = $"SELECT `⁯UserID` FROM `UserInfo` where UserName='{UserName}' and pwd='{pwd}'";
             var dt = test_mysql.Models.MysqlHelper.ExecuteScalar(sql);
             if (dt==null)
             {
@@ -79,7 +82,7 @@ namespace test_mysql.Controllers
         [HttpGet]
         public string getStudentByid(int id)
         {
-          student s1 = EFService.GetStudent($"SELECT * FROM `student` where `⁯id`={id}");
+            UserInfo s1 = EFService.GetUserInfo($"SELECT * FROM `UserInfo` where UserID={id}");
             return Newtonsoft.Json.JsonConvert.SerializeObject(s1);
         }
 
