@@ -57,7 +57,7 @@
                         "/home/getStudentByid",
                         { "id": id },
                         function (data) {
-                            $('#logintxt').html(data.UserName);
+                            $('#logintxt').html("欢迎！"+data.UserName);
                             $('#esclogin').show();
                         }
                         , "json"
@@ -77,10 +77,10 @@
         //$(function () {
         //    $(".search-submit").click(function () {
         //        $.post(
-        //            "Home/index",
-        //            { search: $("#search").val() },
-        //            function () {
-
+        //           url/ "Home/index",
+        //            data/{ search: $("#search").val() },
+        //            function (参数) {
+                           //做事情
         //            },"json"
 
         //        )

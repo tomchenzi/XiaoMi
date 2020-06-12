@@ -272,6 +272,7 @@
     <Content Include="Views\Home\user_register.cshtml" />
     <Content Include="Views\Home\Shopping.cshtml" />
     <Content Include="Views\Home\xiaomi1.cshtml" />
+    <Content Include="Views\Home\email.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

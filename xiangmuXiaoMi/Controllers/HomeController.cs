@@ -7,17 +7,39 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using test_mysql.Models;
 using test_mysql.EF;
+using System.Net.Mail;
 
 namespace test_mysql.Controllers
 {
 
     public class HomeController : Controller
     {
-        
-      
-     [HttpPost]
+
+
+        [HttpPost]
+        //public ActionResult email(string email) {
+        //    {
+        //        /*第一种，利用Google的smtp来发送邮件*/
+        //        SmtpClient client = new SmtpClient("smtp.qq.com", 25);
+        //        Random Rdm = new Random();
+        //        //产生0到100的随机数
+        //        int iRdm = Rdm.Next(99999, 100000);
+        //        MailMessage msg = new MailMessage("1546268404@qq.com", "接收的邮箱", "验证码", iRdm.ToString());
+        //        client.UseDefaultCredentials = false;
+        //        System.Net.NetworkCredential basicAuthenticationInfo =
+        //            new System.Net.NetworkCredential("1746842789@qq.com", "chenzijun@qq.com");
+        //        client.Credentials = basicAuthenticationInfo;
+        //        client.EnableSsl = true;
+        //        client.Send(msg);
+        //        return Content("s");
+        //    }
+        //}
+        //public ActionResult email() {
+        //    return View();
+        //}
         public string Index(string search)
         {
+
             string sql = $"select * from UserInfo where UserName like '{search}%'";
             var dt = test_mysql.Models.MysqlHelper.ExecuteScalar(sql);
             //if (dt.Columns.Count >= 5)
